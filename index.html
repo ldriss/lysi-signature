@@ -369,7 +369,7 @@ function build() {
 
   // photo is optional — omit the cell entirely so the layout closes up
   const photoCell = photo
-    ? `<td valign="top" style="padding-right:20px;"><img src="${esc(photo)}" width="80" height="80" alt="${name}" style="display:block;border:0;outline:none;text-decoration:none;"></td>`
+    ? `<td valign="top" style="padding-right:20px;"><img src="${esc(photo)}" width="80" height="80" alt="${name}" style="display:block;border:0;outline:none;text-decoration:none;border-radius:40px;"></td>`
     : '';
 
   // every field below the name is optional — an empty one drops its whole row
