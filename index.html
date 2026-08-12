@@ -253,8 +253,7 @@ ${titleRows}<tr><td style="height:18px;line-height:18px;font-size:0;">&nbsp;</td
 <td width="1" valign="top" style="width:1px;font-size:0;line-height:0;background:rgba(255,255,255,0.20);">&nbsp;</td>
 <td valign="top" style="padding-left:26px;">
 <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;"><tbody>
-${mobileRows}${emailRows}<tr><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:10px;line-height:1.3;color:rgba(255,255,255,0.52);font-weight:600;letter-spacing:1px;">OFFICE</span></td></tr>
-<tr><td style="height:3px;line-height:3px;font-size:0;">&nbsp;</td></tr>
+${mobileRows}${emailRows}<tr><td style="padding-bottom:5px;"><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:10px;line-height:1.4;color:rgba(255,255,255,0.52);font-weight:600;letter-spacing:1px;">OFFICE</span></td></tr>
 <tr><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;line-height:1.45;color:rgba(255,255,255,0.72);font-weight:400;">${addr1}</span><br><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;line-height:1.45;color:rgba(255,255,255,0.72);font-weight:400;">${addr2}</span></td></tr>
 </tbody></table>
 </td></tr></tbody></table>
@@ -374,9 +373,10 @@ function build() {
 
   // every field below the name is optional — an empty one drops its whole row
   // group so no orphaned label or gap is left behind
+  // Gmail collapses zero-height spacer rows but honours cell padding, so the
+  // gap under a label lives in the td's padding-bottom, not a spacer <tr>.
   const lbl = txt =>
-    `<tr><td><span style="font-family:${FONT};font-size:10px;line-height:1.3;color:${LABEL};font-weight:600;letter-spacing:1px;">${txt}</span></td></tr>`
-    + `<tr><td style="height:4px;line-height:4px;font-size:0;">&nbsp;</td></tr>`;
+    `<tr><td style="padding-bottom:5px;"><span style="font-family:${FONT};font-size:10px;line-height:1.4;color:${LABEL};font-weight:600;letter-spacing:1px;">${txt}</span></td></tr>`;
   const gap = h =>
     `<tr><td style="height:${h}px;line-height:${h}px;font-size:0;">&nbsp;</td></tr>`;
 
